@@ -1,57 +1,27 @@
-//Exercise pt 1.
-
-//modify the variable definitions and make the application still work
-
-// const App = () => {
-//   const course = 'Half Stack application development'
-//   const part1 = {
-//     name: 'Fundamentals of React',
-//     exercises: 10
-//   }
-//   const part2 = {
-//     name: 'Using props to pass data',
-//     exercises: 7
-//   }
-//   const part3 = {
-//     name: 'State of a component',
-//     exercises: 14
-//   }
-
-//   return (
-//     <div>
-//       ...
-//     </div>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
-  
-  
+  const parts = [
+        {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+     {
+        name: 'Using props to pass data',
+        exercises: 7},
+     {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+
   //Header 
   const Header =(props)=>{
-    console.log(props)
+  
   
     return(
       <h1>{props.course}</h1>
     )
   }
-
 
 // Parts
 const Part = (props)=>{
@@ -60,40 +30,31 @@ const Part = (props)=>{
   )
 }
 
-
-
 //Content
 const Content = ()=>{
+
   return(
     <div> 
-    <Part part={part1} />
-    <Part part={part2}/>
-    <Part part={part3} />
+    <Part part={parts[0].name} />
+    <Part part={parts[1].name}/>
+    <Part part={parts[2].name} />
     </div>
   
   )
 }
-
 //Total
-const Total = (props)=>{
+const Total = ()=>{
   return(
-    <h3>Total Number of exercises: {props.exercises}</h3>
+    <h3>Total Number of exercises: {parts[0].exercises}</h3>
   )
 }
-  
   return (
     <div>
       <Header course={course} />
       <Content />
-      <Total exercises = {exercises1 + exercises2 + exercises3} />
+      <Total  />
     </div>
   )
 }
 
-
-
-
-
-
-
-export default App
+ export default App
